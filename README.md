@@ -27,7 +27,7 @@ It must look like this:
 ```
 or:
 ```
-0 */6 * * * python /home/iliana/isup-notify/main.py > /home/user/isup.log if it prints something
+0 */6 * * * python /home/iliana/isup-notify/main.py > /home/user/isup.log 
 ```
 The first one runs the file main.py every 6 hours.
 The second one runs the file main.py every 6 hours but also writes every result of the print command into the file isup.log
