@@ -1,16 +1,15 @@
+"""Configuration"""
 
-#domains to check
+# MAIL SETTINGS
+email = 'example@foo.com'
+user = 'username'
+password = 'password'
+
+server = 'localhost' # our own server 
+
+
+recievers = ( 'example@bar.com', 'other@email.com' )
+
+# DOMAINS TO CHECK
 domains = ( 'google.gr', 'facebook.com', 'hpanago.com')
 
-#receiver(s)
-mail = 'foo@bar.com' 
-#if you have multiple emails
-#mail = ('foo@bar.com', 'foo2@bar.com')
-
-#sender email
-address = 'isup@bar.com'
-
-#Create a sendgrid account here: 
-#https://sendgrid.com/user/signup	
-sendgrid_username = 'foobar_API'
-sendgrid_password = 'foobar'
