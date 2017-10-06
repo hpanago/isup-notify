@@ -9,7 +9,8 @@ EMAIL = conf.email
 USERNAME = conf.user if conf.user is not '' else conf.email
 PASSWORD = conf.password
 RECIEVERS = conf.recievers
-SERVER = conf.server
+SMTP_SERVER = conf.smtp_server
+SMTP_PORT = conf.smtp_port
 
 def pingstats(domain):
     return os.popen('ping -c2 %s' % domain)
@@ -52,5 +53,7 @@ msg['To'] = RECIEVERS
 msg.set_content(final_text)
 
 # Send the message via our own SMTP server.
-with smtplib.SMTP(SERVER) as s:
-        s.send_message(msg)
+with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as s:
+    s.starttls() # secure connection
+    s.login(USERNAME, PASSWORD)
+    s.send_message(msg)
